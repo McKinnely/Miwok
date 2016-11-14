@@ -1,9 +1,7 @@
 package com.example.android.miwok;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -17,26 +15,38 @@ public class NumbersActivity extends AppCompatActivity {
 
 
         //Create wordsArray
-        ArrayList<String> wordsArray  = new ArrayList<String>(); //("one", "two", "three", "four", "five", "six", "seven","eight","nine","ten" );
-        Context context = getApplicationContext();
+        ArrayList<Word> wordsArrayList = new ArrayList<Word>(); //("one", "two", "three", "four", "five", "six", "seven","eight","nine","ten" );
 
-        wordsArray.add("one");
-        wordsArray.add("two");
-        wordsArray.add("three");
-        wordsArray.add("four");
-        wordsArray.add("five");
-        wordsArray.add("six");
-        wordsArray.add("seven");
-        wordsArray.add("eight");
-        wordsArray.add("nine");
-        wordsArray.add("ten");
+       // wordsArray.add("one");
+
+        wordsArrayList.add(new Word("one", "lutti"));
+        wordsArrayList.add(new Word("two", "otiiko"));
+        wordsArrayList.add(new Word("three", "tolookosu"));
+        wordsArrayList.add(new Word("four", "oyyisa"));
+        wordsArrayList.add(new Word("five", "massokka"));
+        wordsArrayList.add(new Word("six", "temokka"));
+        wordsArrayList.add(new Word("seven", "kenekaku"));
+        wordsArrayList.add(new Word("eight", "kawinta"));
+        wordsArrayList.add(new Word("nine", "wo' e"));
+        wordsArrayList.add(new Word("ten", "na' aacha"));
 
 
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, wordsArray);
 
+
+        /**
+        Creates an adapter that takes in the wordsArray so that the  application can work wit the most
+        efficient amount of memory.
+        */
+       WordAdapter adapter = new WordAdapter(this, wordsArrayList);
+        /**
+        Created a corresponding ListView to the type of view inside of activity_numbers.xml file (the type of view inside that file)
+        to display the adapter's (itemsAdapter) data inside of it.
+        */
         ListView listView = (ListView) findViewById(R.id.list);
-
-        listView.setAdapter(itemsAdapter);
+        /**
+        Applies the adapter logic inside of the listView so that it shows the screen.
+        */
+       listView.setAdapter(adapter);
 
 
 
