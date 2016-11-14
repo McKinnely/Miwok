@@ -3,8 +3,8 @@ package com.example.android.miwok;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -31,15 +31,14 @@ public class NumbersActivity extends AppCompatActivity {
         wordsArray.add("nine");
         wordsArray.add("ten");
 
-        LinearLayout rootView = (LinearLayout)findViewById(R.id.rootView);
-        TextView wordView  = new TextView(this);
-        int num = 0;
-        while(num < wordsArray.size())
-        {
-            wordView.setText(wordsArray.get(num));
-            rootView.addView(wordView);
-            num++;
-        }
+
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, wordsArray);
+
+        ListView listView = (ListView) findViewById(R.id.list);
+
+        listView.setAdapter(itemsAdapter);
+
+
 
     }
 }
