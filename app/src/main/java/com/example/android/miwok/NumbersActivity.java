@@ -6,12 +6,14 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class NumbersActivity extends AppCompatActivity {
+public class NumbersActivity extends AppCompatActivity
+{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.word_list);
 
 
         //Create wordsArray
@@ -30,16 +32,13 @@ public class NumbersActivity extends AppCompatActivity {
         wordsArrayList.add(new Word("nine", "wo' e"));
         wordsArrayList.add(new Word("ten", "na' aacha"));
 
-
-
-
         /**
         Creates an adapter that takes in the wordsArray so that the  application can work wit the most
         efficient amount of memory.
         */
        WordAdapter adapter = new WordAdapter(this, wordsArrayList);
         /**
-        Created a corresponding ListView to the type of view inside of activity_numbers.xml file (the type of view inside that file)
+        Created a corresponding ListView to the type of view inside of word_list.xmlthe type of view inside that file)
         to display the adapter's (itemsAdapter) data inside of it.
         */
         ListView listView = (ListView) findViewById(R.id.list);
