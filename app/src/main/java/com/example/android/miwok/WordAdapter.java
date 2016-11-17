@@ -55,6 +55,8 @@ public class WordAdapter extends ArrayAdapter<Word>
         // Get the version number from the current AndroidFlavor object and
         // see this text on the number TextView
 
+
+
         if(currentWord.hasImage())
         {
             miwokImages.setImageResource(currentWord.getImageResourceId());
