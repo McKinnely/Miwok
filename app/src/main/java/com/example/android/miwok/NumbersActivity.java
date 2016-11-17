@@ -13,6 +13,7 @@ public class NumbersActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        /** Allows for us to set the context of the data in this file inside of the word_list.xml file. */
         setContentView(R.layout.word_list);
 
 
@@ -21,16 +22,16 @@ public class NumbersActivity extends AppCompatActivity
 
        // wordsArray.add("one");
 
-        wordsArrayList.add(new Word("one", "lutti"));
-        wordsArrayList.add(new Word("two", "otiiko"));
-        wordsArrayList.add(new Word("three", "tolookosu"));
-        wordsArrayList.add(new Word("four", "oyyisa"));
-        wordsArrayList.add(new Word("five", "massokka"));
-        wordsArrayList.add(new Word("six", "temokka"));
-        wordsArrayList.add(new Word("seven", "kenekaku"));
-        wordsArrayList.add(new Word("eight", "kawinta"));
-        wordsArrayList.add(new Word("nine", "wo' e"));
-        wordsArrayList.add(new Word("ten", "na' aacha"));
+        wordsArrayList.add(new Word("one", "lutti", R.drawable.number_one));
+        wordsArrayList.add(new Word("two", "otiiko", R.drawable.number_two));
+        wordsArrayList.add(new Word("three", "tolookosu", R.drawable.number_three));
+        wordsArrayList.add(new Word("four", "oyyisa", R.drawable.number_four));
+        wordsArrayList.add(new Word("five", "massokka", R.drawable.number_five));
+        wordsArrayList.add(new Word("six", "temokka", R.drawable.number_six));
+        wordsArrayList.add(new Word("seven", "kenekaku", R.drawable.number_seven));
+        wordsArrayList.add(new Word("eight", "kawinta", R.drawable.number_eight));
+        wordsArrayList.add(new Word("nine", "wo' e", R.drawable.number_nine));
+        wordsArrayList.add(new Word("ten", "na' aacha", R.drawable.number_ten));
 
         /**
         Creates an adapter that takes in the wordsArray so that the  application can work wit the most
