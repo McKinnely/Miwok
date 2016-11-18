@@ -32,7 +32,7 @@ public class FamilyMembersActivity extends AppCompatActivity {
          Creates an adapter that takes in the wordsArray so that the  application can work wit the most
          efficient amount of memory.
          */
-        WordAdapter adapter = new WordAdapter(this, wordsArrayList);
+        WordAdapter adapter = new WordAdapter(this, wordsArrayList, R.color.category_family);
         /**
          Created a corresponding ListView to the type of view inside of word_list.xmlthe type of view inside that file)
          to display the adapter's (itemsAdapter) data inside of it.
