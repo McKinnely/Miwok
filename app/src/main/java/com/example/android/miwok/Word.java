@@ -17,20 +17,24 @@ public class Word
     /** Miwok image view */
     private int mImageResourceId = NO_IMAGE_FOUND;
 
+    private int mAudioResourceID;
+
     private  static final int NO_IMAGE_FOUND = -1;
 
 
-    public Word(String defaultTranslation, String miwokTranslation)
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceID)
     {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation   = miwokTranslation;
+        mAudioResourceID = audioResourceID;
     }
 
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId)
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceID)
     {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation   = miwokTranslation;
         mImageResourceId    = imageResourceId;
+        mAudioResourceID = audioResourceID;
     }
 
 
@@ -54,5 +58,10 @@ public class Word
     public boolean hasImage()
     {
         return  mImageResourceId != NO_IMAGE_FOUND;
+    }
+
+    public int getAudioResourceID()
+    {
+        return mAudioResourceID;
     }
 }

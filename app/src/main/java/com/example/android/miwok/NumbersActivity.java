@@ -1,13 +1,18 @@
 package com.example.android.miwok;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity
 {
+
+    private  MediaPlayer mMediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -18,20 +23,20 @@ public class NumbersActivity extends AppCompatActivity
 
 
         //Create wordsArray
-        ArrayList<Word> wordsArrayList = new ArrayList<Word>(); //("one", "two", "three", "four", "five", "six", "seven","eight","nine","ten" );
+       final ArrayList<Word> wordsArrayList = new ArrayList<Word>(); //("one", "two", "three", "four", "five", "six", "seven","eight","nine","ten" );
 
        // wordsArray.add("one");
 
-        wordsArrayList.add(new Word("one", "lutti", R.drawable.number_one));
-        wordsArrayList.add(new Word("two", "otiiko", R.drawable.number_two));
-        wordsArrayList.add(new Word("three", "tolookosu", R.drawable.number_three));
-        wordsArrayList.add(new Word("four", "oyyisa", R.drawable.number_four));
-        wordsArrayList.add(new Word("five", "massokka", R.drawable.number_five));
-        wordsArrayList.add(new Word("six", "temokka", R.drawable.number_six));
-        wordsArrayList.add(new Word("seven", "kenekaku", R.drawable.number_seven));
-        wordsArrayList.add(new Word("eight", "kawinta", R.drawable.number_eight));
-        wordsArrayList.add(new Word("nine", "wo' e", R.drawable.number_nine));
-        wordsArrayList.add(new Word("ten", "na' aacha", R.drawable.number_ten));
+        wordsArrayList.add(new Word("one", "lutti", R.drawable.number_one, R.raw.number_one));
+        wordsArrayList.add(new Word("two", "otiiko", R.drawable.number_two, R.raw.number_two));
+        wordsArrayList.add(new Word("three", "tolookosu", R.drawable.number_three, R.raw.number_three));
+        wordsArrayList.add(new Word("four", "oyyisa", R.drawable.number_four, R.raw.number_four));
+        wordsArrayList.add(new Word("five", "massokka", R.drawable.number_five, R.raw.number_five));
+        wordsArrayList.add(new Word("six", "temokka", R.drawable.number_six, R.raw.number_six));
+        wordsArrayList.add(new Word("seven", "kenekaku", R.drawable.number_seven, R.raw.number_seven));
+        wordsArrayList.add(new Word("eight", "kawinta", R.drawable.number_eight, R.raw.number_eight));
+        wordsArrayList.add(new Word("nine", "wo' e", R.drawable.number_nine, R.raw.number_nine));
+        wordsArrayList.add(new Word("ten", "na' aacha", R.drawable.number_ten, R.raw.number_ten));
 
         /**
         Creates an adapter that takes in the wordsArray so that the  application can work wit the most
@@ -48,6 +53,18 @@ public class NumbersActivity extends AppCompatActivity
         */
        listView.setAdapter(adapter);
 
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                Word word =   wordsArrayList.get(position);
+                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, word.getAudioResourceID());
+                mMediaPlayer.start();
+            }
+        });
 
 
     }
