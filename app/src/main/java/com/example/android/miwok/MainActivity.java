@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent familyIntent = new Intent(MainActivity.this, FamilyMembersActivity.class);
+                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
                 startActivity(familyIntent);
             }
         });
