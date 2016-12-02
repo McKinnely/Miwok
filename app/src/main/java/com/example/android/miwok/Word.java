@@ -22,11 +22,14 @@ public class Word
     private  static final int NO_IMAGE_FOUND = -1;
 
 
-    public Word(String defaultTranslation, String miwokTranslation, int audioResourceID)
+
+
+    public Word(String miwokTranslation, String defaultTranslation, int imageResourceId)
     {
-        mDefaultTranslation = defaultTranslation;
+
         mMiwokTranslation   = miwokTranslation;
-        mAudioResourceID = audioResourceID;
+        mDefaultTranslation = defaultTranslation;
+        mImageResourceId    = imageResourceId;
     }
 
     public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceID)
@@ -34,7 +37,7 @@ public class Word
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation   = miwokTranslation;
         mImageResourceId    = imageResourceId;
-        mAudioResourceID = audioResourceID;
+        mAudioResourceID    = audioResourceID;
     }
 
 

@@ -23,8 +23,12 @@
     <string name="category_colors">Colors</string>
 
     <!-- Category name for the vocabulary words for numbers [CHAR LIMIT=20] -->
-    <string name="category_numbers">Numbers</string>
+    <string name="category_numbers">Parks And Outdoors</string>
 
     <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
     <string name="category_family">Family Members</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="shopping">Shopping</string>
+    <string name="night_life">Night Life</string>
+    <string name="parks_and_outdoors">Parks And Outdoors</string>
 </resources>
